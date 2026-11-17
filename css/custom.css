@@ -1,0 +1,209 @@
+/* ============================================
+   博客全局自定义样式（由 _config.butterfly.yml inject 引入）
+   结构：① 视频横幅 ② 正文可读性 ③ 玻璃拟态卡片 ④ 细节
+   ============================================ */
+
+/* ---------- ① 视频横幅 ---------- */
+#page-header {
+  position: relative !important;
+  overflow: hidden;
+  background: #000 !important;
+}
+#banner-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  will-change: transform;
+  transform: translateZ(0);
+  transition: opacity 0.8s ease;
+}
+/* 层级控制：导航与标题浮于视频之上 */
+#page-header .nav, #site-info, #scroll-down {
+  position: relative;
+  z-index: 3 !important;
+}
+/* 视频上方：无半透明背景，仅文字 */
+#site-info {
+  background: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  padding: 20px 35px !important;
+  border: none !important;
+}
+/* 横幅白字 + 柔和阴影（仅作用于横幅，不影响正文） */
+#site-title, #site-subtitle, #subtitle,
+#page-header .nav-item a, #page-header .menu-text {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.65) !important;
+  opacity: 1 !important;
+}
+
+/* ---------- ② 正文可读性 ---------- */
+/* 正文恢复深色文字，去掉晃眼的白字和光晕 */
+body, html {
+  color: #363636 !important;
+  text-shadow: none !important;
+}
+/* 主题自带的正文配色（链接、代码高亮等）自然生效 */
+#article-container, #post, #page {
+  text-shadow: none !important;
+}
+/* 侧栏卡片/文章列表卡片（深色半透明底）：保留白字 + 柔和阴影 */
+.card-widget *, .recent-post-item * {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4) !important;
+  opacity: 1 !important;
+}
+
+/* ---------- ③ 玻璃拟态卡片 ---------- */
+.card-widget {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-radius: 14px !important;
+  backdrop-filter: blur(10px) saturate(150%) !important;
+  -webkit-backdrop-filter: blur(10px) saturate(150%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-widget:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+.recent-post-item,
+.post-item,
+.article-sort-item,
+.post-list-item,
+.post-list .post-item {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-radius: 14px !important;
+  backdrop-filter: blur(10px) saturate(150%) !important;
+  -webkit-backdrop-filter: blur(10px) saturate(150%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.recent-post-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.4);
+}
+/* 文章内容卡片：圆角 + 柔和投影，与深色背景协调 */
+#post, #page {
+  border-radius: 14px !important;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 页脚：半透明磨砂，与卡片风格统一 */
+#footer {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+#footer, #footer a, #footer span {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+#footer a:hover {
+  color: #6db3ff !important;
+}
+
+/* ---------- ④ 细节 ---------- */
+/* 加载进度条：改为品牌蓝 */
+#nprogress .bar {
+  background: linear-gradient(90deg, #4c9aff, #6db3ff) !important;
+  height: 3px !important;
+}
+#nprogress .peg {
+  box-shadow: 0 0 10px #4c9aff, 0 0 5px #4c9aff !important;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.35) !important;
+  border-radius: 8px !important;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+::-webkit-scrollbar {
+  width: 8px !important;
+}
+
+/* 文字选中色 */
+::selection {
+  background: rgba(77, 154, 255, 0.45);
+  color: #fff;
+}
+
+/* 文章内链接：主题蓝 + 悬浮下划线过渡 */
+#article-container a {
+  transition: color 0.2s ease;
+}
+
+/* ---------- ⑤ 文章排版美化 ---------- */
+/* 字体渲染优化 */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.3px;
+}
+
+/* 标题：左侧渐变竖条装饰 */
+#article-container h1, #article-container h2 {
+  padding-left: 14px;
+  border-left: 5px solid #4c9aff;
+  line-height: 1.4;
+}
+#article-container h3, #article-container h4 {
+  padding-left: 12px;
+  border-left: 4px solid rgba(77, 154, 255, 0.45);
+}
+
+/* 引用块：磨砂浅蓝卡片 */
+#article-container blockquote {
+  background: rgba(77, 154, 255, 0.08);
+  border-left: 4px solid #4c9aff;
+  border-radius: 8px;
+  padding: 12px 18px;
+}
+
+/* 行内代码：浅蓝底圆角 */
+#article-container code:not([class]) {
+  background: rgba(77, 154, 255, 0.12);
+  color: #2b7bd4;
+  border-radius: 5px;
+  padding: 2px 7px;
+}
+
+/* 分割线柔和 */
+#article-container hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(77,154,255,0.5), transparent);
+}
+
+/* 侧栏头像：呼吸光圈 */
+.card-widget.card-author .avatar-img {
+  border: 2px solid rgba(109, 179, 255, 0.6);
+  box-shadow: 0 0 14px rgba(77, 154, 255, 0.45);
+  transition: box-shadow 0.4s ease;
+}
+.card-widget.card-author:hover .avatar-img {
+  box-shadow: 0 0 22px rgba(77, 154, 255, 0.75);
+}
+
+/* 导航栏：滚动后悬浮磨砂 */
+#page-header.nav-fixed > #nav {
+  background: rgba(10, 20, 45, 0.75) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.3);
+}

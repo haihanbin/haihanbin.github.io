@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title></title>
+      <link href="/2026/01/12/sqlmap/"/>
+      <url>/2026/01/12/sqlmap/</url>
+      
+        <content type="html"><![CDATA[<hr><h2 id="sqlmap"><a href="#sqlmap" class="headerlink" title="sqlmap"></a>sqlmap</h2><h2 id="测试是否存在漏洞"><a href="#测试是否存在漏洞" class="headerlink" title="测试是否存在漏洞"></a>测试是否存在漏洞</h2><p>语法：sqlmap -u “测试网址”</p><h2 id="测试当前数据库的名字"><a href="#测试当前数据库的名字" class="headerlink" title="测试当前数据库的名字"></a>测试当前数据库的名字</h2><p>语法：sqlmap -u “测试网址” –dbs<br><em>informaation_schema</em><br><em>mysql</em><br><em>performance_schema</em><br>内置库名</p><h2 id="测试指定数据库中有几个数据表"><a href="#测试指定数据库中有几个数据表" class="headerlink" title="测试指定数据库中有几个数据表"></a>测试指定数据库中有几个数据表</h2><p>语法：sqlmap -u “测试网址” -D –tables</p><h2 id="测试指定数据表中的数据"><a href="#测试指定数据表中的数据" class="headerlink" title="测试指定数据表中的数据"></a>测试指定数据表中的数据</h2><p>语法：sqlmap -u “测试网址” -D -T “数据表名” –dump</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
